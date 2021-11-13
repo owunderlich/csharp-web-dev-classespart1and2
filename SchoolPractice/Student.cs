@@ -27,10 +27,11 @@ namespace SchoolPractice
             nextStudentId++;
         }
 
-        // TODO: Complete the AddGrade method.
         public void AddGrade(int courseCredits, double grade)
         {
             // Update the appropriate properties: NumberOfCredits, Gpa
+            this.NumberOfCredits += courseCredits;
+            this.Gpa 
         }
 
         //TODO: Complete the GetGradeLevel method here:
