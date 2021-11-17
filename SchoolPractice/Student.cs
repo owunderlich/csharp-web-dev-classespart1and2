@@ -30,15 +30,33 @@ namespace SchoolPractice
         public void AddGrade(int courseCredits, double grade)
         {
             // Update the appropriate properties: NumberOfCredits, Gpa
+            double totalQualityScore = this.Gpa * this.NumberOfCredits + (courseCredits * grade);
             this.NumberOfCredits += courseCredits;
-            this.Gpa 
+            this.Gpa = totalQualityScore / this.NumberOfCredits;
         }
 
         //TODO: Complete the GetGradeLevel method here:
         public string GetGradeLevel(int credits)
         {
             // Determine the grade level of the student based on NumberOfCredits
-            return "grade level tbd";
+            if (credits <= 29)
+            {
+                return "Freshman";
+            }
+            else if (credits >= 30 && credits <= 59)
+            {
+                return "Sophomore";
+            } else if (credits >= 60 && credits <= 89)
+            {
+                return "Junior";
+            } else if (credits >= 90)
+            {
+                return "Senior";
+            }
+            else
+            {
+                return "null";
+            }
         }
 
         // TODO: Add your custom 'ToString' method here. Make sure it returns a well-formatted string rather
